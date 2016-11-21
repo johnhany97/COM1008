@@ -1,0 +1,129 @@
+/* This file has been created and written fully by John Ayad */
+
+/*
+ * General Tags
+ */
+
+/* @font-face kit by Fonts2u (http://www.fonts2u.com) */
+@font-face {
+    font-family:"Adidas Half Block 2016";
+    src: url("../fonts/Adidas_Half_Block_2016.ttf") format("truetype");
+    font-weight:normal;
+    font-style:normal;
+}
+
+body {
+    font-family: "Adidas Half Block 2016", serif;
+}
+
+#wrapper {
+    width: 80%;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 1.9em;
+}
+
+/*
+ * Header
+ */
+header {
+    padding: 50px 2%;
+    margin: 0 auto;
+    background-color: rgb(0, 28, 107);
+}
+
+#logo_header {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+/*
+ * Navigation
+ */
+nav {
+    background-color: rgb(234,0,130);
+	margin-bottom: 10px;
+}
+
+nav ul {
+    list-style: none;
+    text-align: center;
+	padding: 0;
+	margin: 0;
+}
+
+nav ul li {
+    font-size: 1.5em;
+	padding: 0;
+    display: inline;
+}
+
+nav ul li a {
+    transition: all 0.3s ease;
+	padding: 2.5%;
+	display: block;
+}
+
+nav a:link {
+    text-decoration: none;
+    color: white;
+}
+
+nav a:visited {
+    color: white;
+}
+
+nav a:hover {
+	color: black;
+	background-color: yellow;
+}
+
+/*
+ * Main Content
+ */
+main h1 {
+    font-size: 60px;
+	border: 1px;
+	padding: 2%;
+	background-color: red;
+	color: white;
+	width: 30%;
+	text-align: center;
+	margin: 0 auto;
+}
+
+main article {
+    margin: 20px 0;
+    border-top: 1px solid rgb(0,0,0);
+}
+
+main article h1{
+    font-size: 1.4em;
+}
+
+
+/*
+ * Footer
+ *
+ */
+footer {
+    clear: both;
+    font-family: "Times New Roman", serif;
+    font-size: 0.8em;
+    text-align: center;
+    border-top: 1px solid gray;
+    padding: 3px 5%;
+}
+/*
+@media screen and (min-width: 700px) {
+    #logo_header {
+        width:80%;
+    }
+    
+    body {
+        font-size: 1em;
+    }
+}*/
