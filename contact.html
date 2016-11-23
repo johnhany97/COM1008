@@ -34,19 +34,18 @@
                 <form name="myform" action="http://www.dcs.shef.ac.uk/cgi-intranet/public/FormMail.pl" method="get">
                     <input type="hidden" name="recipient" value="jayad1@sheffield.ac.uk">
                     <p>
-                        <label for="from">Name:</label>
+                        <label for="from">Name </label>
                         <input type="text" name="from" id="from" placeholder="Type your name..." maxlength="40" size="20">
                     </p>
                     <p>
-                        <label for="from">Email address:</label>
-                        <input type="text" name="from" id="from" placeholder="Type your email..." maxlength="40" size="20">
+                        <label for="email">Email address </label>
+                        <input type="email" name="email" id="email" placeholder="Type your email..." maxlength="40" size="20">
                     </p>
                     <p>
-                        <label for="from">Comments:</label>
-                        <input type="text" name="from" id="from" placeholder="Type your comments..." maxlength="250" size="50">
+                        <textarea name="comments" id="comments" rows="5" cols="50" placeholder="Type your comments..."></textarea>
                     </p>
                     <p>
-                        <input type="submit" name="submit" id="submit" value="submit">
+                        <input type="submit" name="submit" id="submit" value="Submit">
                         <input type="reset">
                     </p>
                 </form>
