@@ -58,6 +58,7 @@ nav ul {
 nav ul li {
     font-size: 1.5em;
 	padding: 0;
+    margin: 0;
     display: inline;
 }
 
@@ -84,7 +85,7 @@ nav a:hover {
 /*
  * Main Content
  */
-main h1 {
+#home_play{
     font-size: 60px;
 	border: 1px;
 	padding: 2%;
