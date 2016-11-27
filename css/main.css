@@ -87,6 +87,14 @@ nav a:hover {
 /*
  * Main Content
  */
+form table {
+    margin: 0 auto;
+}
+
+#home_play {
+    text-align: center;
+    /*font-size: 1.9;*/
+}
 
 main article {
     margin: 20px 0;
