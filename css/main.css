@@ -6,14 +6,14 @@
 
 /* @font-face kit by Fonts2u (http://www.fonts2u.com) */
 @font-face {
-    font-family:"Adidas Half Block 2016";
-    src: url("../fonts/Adidas_Half_Block_2016.ttf") format("truetype");
+    font-family:"NCAA Purdue Boilermakers";
+    src: url("../fonts/NCAA Purdue Boilermakers.otf") format("truetype");
     font-weight:normal;
     font-style:normal;
 }
 
 body {
-    font-family: "Adidas Half Block 2016", serif;
+    font-family: "NCAA Purdue Boilermakers", serif;
     min-width: 320px;
 }
 
