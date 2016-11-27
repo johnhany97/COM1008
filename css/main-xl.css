@@ -1,0 +1,50 @@
+/* This file has been created and written by John Ayad */
+
+/*
+ * General Tags
+ */
+
+
+
+/*
+ * Header
+ */
+
+
+
+/*
+ * Navigation
+ */
+nav {
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0;
+}
+
+nav ul li a {
+    padding: 17px 8px;
+}
+
+
+/*
+ * Main Content
+ */
+form table {
+    margin: 0 auto;
+}
+
+form input[type="text"], form input[type="email"] {
+    width: 600px;
+}
+
+textarea {
+    width: 600px;
+}
+
+/*
+ * Footer
+ *
+ */

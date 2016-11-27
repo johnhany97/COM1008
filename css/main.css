@@ -1,4 +1,4 @@
-/* This file has been created and written fully by John Ayad */
+/* This file has been created and written by John Ayad */
 
 /*
  * General Tags
@@ -14,6 +14,7 @@
 
 body {
     font-family: "Adidas Half Block 2016", serif;
+    min-width: 320px;
 }
 
 #wrapper {
@@ -45,12 +46,12 @@ header {
  */
 nav {
     background-color: rgb(234,0,130);
+    text-align: center;
 	margin-bottom: 10px;
 }
 
 nav ul {
     list-style: none;
-    text-align: center;
 	padding: 0;
 	margin: 0;
 }
@@ -63,6 +64,7 @@ nav ul li {
 }
 
 nav ul li a {
+    color: white;
     transition: all 0.3s ease;
 	padding: 2.5%;
 	display: block;
@@ -85,16 +87,6 @@ nav a:hover {
 /*
  * Main Content
  */
-#home_play{
-    font-size: 60px;
-	border: 1px;
-	padding: 2%;
-	background-color: red;
-	color: white;
-	width: 30%;
-	text-align: center;
-	margin: 0 auto;
-}
 
 main article {
     margin: 20px 0;
@@ -118,13 +110,3 @@ footer {
     border-top: 1px solid gray;
     padding: 3px 5%;
 }
-/*
-@media screen and (min-width: 700px) {
-    #logo_header {
-        width:80%;
-    }
-    
-    body {
-        font-size: 1em;
-    }
-}*/
