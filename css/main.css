@@ -105,6 +105,10 @@ main article h1{
     font-size: 1.4em;
 }
 
+#match_pairs {
+    display: block;
+    margin: 0 auto;
+}
 
 /*
  * Footer

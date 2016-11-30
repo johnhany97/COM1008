@@ -80,15 +80,12 @@ function mainMenu() {
         }
     }
     //Generate the background 2D array
-    var arr = Array.new(4);
-    for (var i = 0; i < 4; i++){
-        arr[i] = Array.new(4);
+    var arr = new Array(16);
+    for (var i = 0; i < arr.length - 1; i++){
+        arr[i] = i;
+        arr[(arr.length / 2) - 1 + i] = i;
     }
-    for (var i = 0; i < 4; i++){
-        for (var j = 0; j < 4; j++){
-            //SOMETHING TO HAVE A RANDOM ARRAY
-        }
-    }
+    shuffle(arr);
 }
 
 function drawBlock(x, y){
@@ -98,6 +95,18 @@ function drawBlock(x, y){
         context.drawImage(block_img, x, y);
     };
     block_img.src = "../images/block.png";
+}
+
+function shuffle(a){
+    for (var i = 0; i < a.length; i++){
+        if ((Math.floor(Math.random() * 2) % 2) == 0 || (Math.floor(Math.random() * 3) % 3) == 0) {
+            var randomLoc = Math.floor(Math.random() * a.length);
+            //console.log("About to replace " + i + "with " + randomLoc);
+            var temp = a[i];
+            a[i] = a[randomLoc];
+            a[randomLoc] = temp;
+        }
+    }
 }
 //Where all the magic takes place
 var canvas = document.getElementById("match_pairs");
