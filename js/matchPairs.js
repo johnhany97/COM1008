@@ -94,7 +94,7 @@ function drawBlock(x, y){
     block_img.onload = function() {
         context.drawImage(block_img, x, y);
     };
-    block_img.src = "../images/block.png";
+    block_img.src = "images/block.png";
 }
 
 function shuffle(a){
