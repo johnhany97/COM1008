@@ -12,28 +12,42 @@
 	font-style:normal;
 }
 
+
 @font-face {
-	font-family:"Karmatic Arcade";
-	src: url("../fonts/ka1.ttf") format("truetype");
+	font-family:"Fitzgerald Black";
+	src: url("../fonts/fitzblack.ttf") format("truetype");
 	font-weight:normal;
 	font-style:normal;
 }
 
+@font-face {
+	font-family:"Fitzgerald";
+	src: url("../fonts/fitzgerald.ttf") format("truetype");
+	font-weight:normal;
+	font-style:normal;
+}
+
+html, body {
+    height: 100%;
+}
+
 body {
-	font-family: "Karmatic Arcade", serif;
+    background-color: rgb(254, 251, 218);
+	font-family: "Fitzgerald", serif;
 	min-width: 360px;
 }
 
 #wrapper {
+    min-height: 80%;
 	width: 80%;
 	max-width: 1000px;
 	margin: 0 auto;
+    position: relative;
 }
 
 h1 {
 	font-size: 1.9em;
 }
-
 /*
  * Header
  */
@@ -69,7 +83,7 @@ nav ul li {
 	padding: 0;
 	margin: 0;
 	display: inline;
-	font-family: "NCAA Purdue Boilermakers";
+	font-family: "Fitzgerald Black";
 }
 
 nav ul li a {
@@ -115,7 +129,7 @@ main article {
 }
 
 main article h1 {
-	font-size: 1.4em;
+	font-size: 1.7em;
 	color: rgb(0, 28, 107);
 }
 
@@ -135,10 +149,14 @@ main article img {
  *
  */
 footer {
+    position: relative;
 	clear: both;
 	font-family: "Times New Roman", serif;
-	font-size: 0.8em;
+    color: white;
 	text-align: center;
-	border-top: 1px solid gray;
-	padding: 3px 5%;
+	/*border-top: 1px solid gray;*/
+	padding: 3px 0;
+    height: 70px;   /* Height of the footer */
+    width: 100%;
+    background-color: rgb(0, 28, 107);
 }
