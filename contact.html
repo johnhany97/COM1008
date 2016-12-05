@@ -12,6 +12,7 @@
         <meta name="author" content="John Ayad">
         <meta name="description" content="COM1008 Assignment">
         <meta name="keywords" content="Puzzle, games, kids, Puzzle Mania">
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js"></script>
     </head>
     
     <body>
@@ -19,14 +20,15 @@
             <img src="images/logo2.png" alt="Puzzle Mania logo" id="logo_header"></img>
         </header>
 		<nav>
-            <ul>
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="founders.html">FOUNDERS</a></li>
-				<li><a href="news.html">NEWS</a></li>
-				<li><a href="testimonials.html">TESTIMONIALS</a></li>
-				<li><a href="puzzles.html">PUZZLES</a></li>
-				<li><a href="contact.html">CONTACT US</a></li>
-				<li><a href="accessibility.html">ACCESSIBILITY</a></li>
+            <li class="menu_button" id="menu_button">MENU</li>
+            <ul class="menu_items">
+                <li class="menu_item"><a href="index.html">HOME</a></li>
+                <li class="menu_item"><a href="founders.html">FOUNDERS</a></li>
+				<li class="menu_item"><a href="news.html">NEWS</a></li>
+				<li class="menu_item"><a href="testimonials.html">TESTIMONIALS</a></li>
+				<li class="menu_item"><a href="puzzles.html">PUZZLES</a></li>
+				<li class="menu_item"><a href="contact.html">CONTACT US</a></li>
+				<li class="menu_item"><a href="accessibility.html">ACCESSIBILITY</a></li>
 			</ul>
 		</nav>
         <div id="wrapper">
@@ -81,6 +83,7 @@
         <footer>
             <p>&copy; John Ayad, 2016</p>
         </footer>
+        <script src="js/nav.js"></script>
     </body>
 
 </html>

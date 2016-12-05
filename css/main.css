@@ -78,7 +78,7 @@ nav ul {
 	margin: 0;
 }
 
-nav ul li {
+nav li {
 	font-size: 1.5em;
 	padding: 0;
 	margin: 0;
@@ -86,7 +86,7 @@ nav ul li {
 	font-family: "Fitzgerald Black";
 }
 
-nav ul li a {
+nav li a, .menu_button {
 	color: white;
 	transition: all 0.3s ease;
 	padding: 2.5%;
@@ -105,6 +105,14 @@ nav a:visited {
 nav a:hover {
 	color: black;
 	background-color: yellow;
+}
+
+.menu_items {
+	display: none;
+}
+ 
+.expand {
+	display: block !important; 
 }
 
 /*
