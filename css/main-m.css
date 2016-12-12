@@ -1,0 +1,33 @@
+/* This file has been created and written by John Ayad */
+
+/*
+ * General Tags
+ */
+
+
+
+/*
+ * Header
+ */
+
+
+
+/*
+ * Navigation
+ */
+
+/*
+ * Main Content
+ */
+.feature_set {
+    flex-direction: row;
+}
+
+.feature {
+    margin: 10px 10px;
+}
+
+/*
+ * Footer
+ *
+ */
