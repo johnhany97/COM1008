@@ -47,6 +47,15 @@ textarea {
     width: 600px;
 }
 
+.founders {
+    flex-direction: row;
+}
+
+.founder {
+    width: 40%;
+    margin: 0 20px;
+}
+
 /*
  * Footer
  *
