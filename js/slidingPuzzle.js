@@ -60,7 +60,7 @@ function initializeGame() {
     //Get game board
     var board = getBoard();
     //Fill board with random numbers
-    //shuffleBoard(board);
+    shuffleBoard(board);
     //Initialize the empty location
     emptyTileInitialize(board);
     //Get the image
@@ -68,7 +68,7 @@ function initializeGame() {
     img.onload = function() {
         drawCells(board);
     };
-    img.src = "images/" + getImage();
+    img.src = "images/game/" + getImage() + ".jpg";
     //Start the actual game
     gamePlay(board);
 }
@@ -134,7 +134,7 @@ function emptyTileInitialize(arr) {
 }
 
 function getImage() {
-    return imgArray[Math.floor(Math.random() * imgArray.length)];
+    return Math.floor(Math.random() * 5);
 }
 
 function drawCells(board) {
@@ -251,7 +251,6 @@ const NUM_CELLS = 5;
 const GAME_CELLS = 3;
 const CELL_WIDTH = CANVAS_WIDTH / NUM_CELLS;
 const CELL_HEIGHT = CANVAS_HEIGHT / NUM_CELLS;
-var imgArray = ["founder2.jpg", "founder3.jpg"];
 var game_won = false;
 var img;
 var celebImg;
