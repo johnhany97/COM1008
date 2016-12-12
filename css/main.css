@@ -200,10 +200,19 @@ main article h1 {
 	color: rgb(0, 28, 107);
 }
 
+main article h3 {
+    font-size: 1.3em;
+    color: black;
+}
+
 main article img {
 	display: block;
 	margin: 0 auto;
 	max-width: 70%;
+}
+
+.red {
+    color: red;
 }
 
 #sliding_puzzle {
