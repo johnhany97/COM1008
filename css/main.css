@@ -277,7 +277,6 @@ main article img { /* News Banner */
 
 .feature_img:hover {
     background-color: rgb(234,0,130); /* Change background-color */
-    transform: scale(1.1); /* Zoom in */
 }
 
 
