@@ -43,7 +43,7 @@ h1 {
 	font-size: 1.9em; /* Default font size for Heading1 */
 }
 
-p, main article p {
+p, main article p, tr {
     font-size: 1.5em; /* Default font size for Paragraph */
 }
 
@@ -118,7 +118,7 @@ nav a:hover {
  * Main Content
  */
 /* Styles for contact form */
-form table {
+table {
 	margin: 0 auto; /* Center align */
 }
 
@@ -269,6 +269,17 @@ main article img { /* News Banner */
 
 .list_item img:hover {
     transform: scale(1.1); /* Zoom in */
+}
+
+/* Styles for Accessibility table */
+#accessibility th, td {
+    padding: 15px;
+    text-align: left;
+	border: 1px solid black;
+}
+
+.bold {
+	font-weight: bold;
 }
 
 /*
