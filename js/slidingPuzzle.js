@@ -144,7 +144,7 @@ function drawCells(board) {
         for (var j = 1; j <= GAME_CELLS; j++) {
             var y = board[i - 1][j - 1].i + 1;
             var x = board[i - 1][j - 1].j + 1;
-            if (board[i - 1][j -1 ].emptyLoc) {
+            if (board[i - 1][j -1 ].emptyLoc && !game_won) {
                 context.fillStyle = "black"
                 context.fillRect(j * CELL_WIDTH, i * CELL_HEIGHT,CELL_WIDTH, CELL_HEIGHT);
             }
