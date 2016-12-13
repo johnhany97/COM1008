@@ -8,7 +8,9 @@ const NUM_CELLS = 5;
 const GAME_CELLS = 3;
 const CELL_WIDTH = CANVAS_WIDTH / NUM_CELLS;
 const CELL_HEIGHT = CANVAS_HEIGHT / NUM_CELLS;
+/* Where all the array lies */
 var board;
+/* Variables for celebration on game winning */
 var requestId;
 var celebImg;
 var celebStatus = 0;
@@ -21,21 +23,37 @@ var celebStatus = 0;
  */
 var game_status = 0;
 
+//Let the games begin!
 splashScreen();
 
+// If mouse hovers over reset button, change its background
+canvas.addEventListener("mousemove", function(evt){
+    if (game_status == 1 || game_status == 2){
+        if (clickReset(evt)) {
+            drawResetButton("hover");
+        } else drawResetButton("normal");
+    }
+}, false);
+
+//Whenever the user clicks
 canvas .addEventListener("click", function(evt) {
     if (game_status == 0){
+        //Initiailize game
         initializeGame();
         if (checkWon()) drawCells();
     } else if (game_status == 1){
+        //Check if user won
         if (checkWon()) game_status = 2;
+        //Check if Reset button is clicked
         if (clickReset(evt)){
             initializeGame();
-        } else slideCell(evt);
+        } else slideCell(evt); //Slide cell if possible
     } else if (game_status == 2) {
         if (!clickReset(evt)) {
+            //Start celebration, our gamer has won!
             start();
         } else {
+            //Clicked on restart button
             initializeGame();
             cancelAnimationFrame(requestId);
         }
@@ -44,7 +62,6 @@ canvas .addEventListener("click", function(evt) {
 
 /*
  * Function to display a splash screen
- *
  */
 function splashScreen() {
     // Background colour
@@ -64,7 +81,6 @@ function splashScreen() {
 
 /*
  * Function to initialize game variables
- *
  */
 function initializeGame() {
     canvas.removeEventListener("click", initializeGame, false);
@@ -74,7 +90,7 @@ function initializeGame() {
     context.fillStyle = "rgb(234, 0, 130)";
     context.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     //Draw Reset Button
-    drawResetButton();
+    drawResetButton("normal");
     //Get game board
     board = getBoard();
     //Fill board with random numbers
@@ -99,7 +115,6 @@ function initializeGame() {
  *
  * Returns:
  *      2D array of objects
- *
  */
 function getBoard() {
     var board = new Array(GAME_CELLS);
@@ -120,7 +135,6 @@ function getBoard() {
 
 /*
  * Function to draw cells on the canvas
- *
  */
 function drawCells() {
     var img_cell_width = img.width / GAME_CELLS;
@@ -143,7 +157,6 @@ function drawCells() {
 
 /*
  * Function to shuffle the 2D board array
- *
  */
 function shuffleBoard() {
     for (var i = 0; i < GAME_CELLS; i++){
@@ -178,7 +191,6 @@ function emptyTileInitialize() {
  *
  * Returns:
  *      Object containing i and j representing index of cell in a 2d array
- *
  */
 function whichGridCell(x, y) {
     if (x < 0) x = 0;
@@ -207,7 +219,6 @@ function clearCanvas() {
  *
  * Returns:
  *      Object containing x and y representing co ordinates of mouse click
- *
  */
 function getMouseXY(e) {
     var boundingRect = canvas.getBoundingClientRect();
@@ -228,7 +239,6 @@ function getMouseXY(e) {
  *
  * Paramters:
  * 		e => Event details on click
- *
  */
 function slideCell(e){
     //User didn't win yet
@@ -272,7 +282,6 @@ function slideCell(e){
  *      i => Cell Pressed row
  *      j => Cell pressed col
  *      posTo => Location to swap with
- *
  */
 function swapCells(i, j, posTo){
     if (posTo == "top") {
@@ -305,7 +314,6 @@ function swapCells(i, j, posTo){
  *
  * Returns:
  *      boolean representing whether or not click was inside the button
- *
  */
 function clickReset(evt){
 	// Get Mouse Position
@@ -327,7 +335,6 @@ function clickReset(evt){
  *
  * Returns:
  *      boolean representing whether the user won or not
- *
  */
 function checkWon(){
     var flag = true;
@@ -340,20 +347,37 @@ function checkWon(){
     return flag;
 }
 
-function drawResetButton() {
+/*
+ * Function to draw reset button on screen
+ *
+ * Paramteres:
+ *      status => String representing whether the button is currently hovered upon or not
+ */
+function drawResetButton(status) {
     //Draw reset button
-    context.fillStyle = "rgb(0, 28, 107)";
+    if (status == "normal") 
+        context.fillStyle = "rgb(0, 28, 107)";
+    else
+        context.fillStyle = "black";
     context.fillRect(CELL_WIDTH*3 + CELL_WIDTH/3, CELL_HEIGHT*4 + CELL_HEIGHT/8, CELL_WIDTH + CELL_WIDTH/3, CELL_HEIGHT - (CELL_HEIGHT/4));
     context.fillStyle = "white";
     context.font = "10pt sans-serif";
     context.fillText("RESTART", CANVAS_WIDTH - (CELL_WIDTH), CANVAS_HEIGHT - (CELL_WIDTH / 2.5));
 }
 
+/*
+ * The following functions are being used to animate the game winning scenario
+ */
+/*
+ * Function to start the celebration
+ */
 function start(){
     draw();
     nextFrame();
 }
-
+/* 
+ * Function to draw current celebration
+ */
 function draw() {
     //Clear Screen
     clearCanvas();
@@ -361,7 +385,7 @@ function draw() {
     context.fillStyle = "rgb(234, 0, 130)";
     context.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     //Draw Reset Button
-    drawResetButton();
+    drawResetButton("normal");
     //Draw new Win Animation
     celebImg = new Image();
     celebImg.onload = function() {
@@ -371,15 +395,21 @@ function draw() {
     else celebImg.src =  "../images/game/game_win_1.png";
 }
 
+/*
+ * Function to update Status of celebration
+ */
 function update() {
     if (celebStatus == 0) celebStatus = 1;
     else celebStatus = 0;
 }
 
+/*
+ * Where all the animation takes place (every 0.5 second)
+ */
 function nextFrame() {
     setTimeout(function() {
         requestId = requestAnimationFrame (nextFrame);
         update();
         draw();
-    }, 1000);
+    }, 500);
 }
