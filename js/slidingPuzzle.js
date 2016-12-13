@@ -68,7 +68,7 @@ function initializeGame() {
     img.onload = function() {
         drawCells(board);
     };
-    img.src = "images/game/" + getImage() + ".jpg";
+    img.src = "../images/game/" + getImage() + ".jpg";
     //Start the actual game
     gamePlay(board);
 }
@@ -254,7 +254,7 @@ const CELL_HEIGHT = CANVAS_HEIGHT / NUM_CELLS;
 var game_won = false;
 var img;
 var celebImg;
-var celebrationImg = "images/game_win_1.png";
+var celebrationImg = "../images/game_win_1.png";
 //Start the magic show
 splashScreen()
 canvas.addEventListener("click", initializeGame);

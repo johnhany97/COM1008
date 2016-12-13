@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <!-- This website has been fully designed and developed by John Ayad -->
+        <meta charset="utf-8">
+		<!-- RWD -->
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+        <title>Puzzle Mania</title>
+		<!-- Style sheets -->
+        <link rel="stylesheet" href="../css/normalize.css">
+        <link rel="stylesheet" href="../css/main.css">
+        <link rel="stylesheet" href="../css/main-l.css" media="screen and (min-width: 800px)">
+        <link rel="stylesheet" href="../css/main-m.css" media="screen and (min-width: 600px)">
+		<!-- Meta tags -->
+        <meta name="author" content="John Ayad">
+        <meta name="description" content="COM1008 Assignment">
+        <meta name="keywords" content="Puzzle, games, kids, Puzzle Mania">
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js"></script>
+    </head>
+    
+    <body>
+		<!-- Website Logo -->
+        <header>
+            <img src="../images/logo.png" alt="Puzzle Mania logo" id="logo_header"></img>
+        </header>
+		<!-- Navigation System -->
+		<nav>
+			<!-- Button used on mobile devices to open menu system -->
+            <li class="menu_button" id="menu_button">MENU</li>
+			<!-- Menu items -->
+            <ul class="menu_items">
+                <li class="menu_item"><a href="../index.html" accesskey="h">HOME</a></li>
+                <li class="menu_item"><a href="../founders.html" accesskey="j">FOUNDERS</a></li>
+				<li class="menu_item"><a href="../news.html" accesskey="n">NEWS</a></li>
+				<li class="menu_item"><a href="../recommendations.html" accesskey="r">RECOMMENDATIONS</a></li>
+				<li class="menu_item"><a href="../puzzles.html" accesskey="p">PUZZLES</a></li>
+				<li class="menu_item"><a href="../contact.html" accesskey="c">CONTACT US</a></li>
+			</ul>
+		</nav>
+        <main>
+			<!-- Page Title -->
+            <h1 class="page_title">Sliding Puzzle</h1>
+			<!-- Canvas containing the game -->
+            <canvas id="sliding_puzzle" width="300" height="300"></canvas>
+			<h2><a href="../puzzles.html">Go Back to list of Puzzles</a></h2>
+        </main>
+		<!-- Footer -->
+        <footer>
+            <p><a href="../accessibility.html" accesskey="a">Accessibility</a></p>
+            <p>&copy; John Ayad, 2016</p>
+        </footer>
+        <script src="../js/slidingPuzzle.js"></script>
+        <script src="../js/nav.js"></script>
+    </body>
+
+</html>

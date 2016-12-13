@@ -123,28 +123,34 @@ table {
 }
 
 input[type=text], input[type=email], textarea {
-	padding: 10px;
-	margin: 10px 0;
 	border: 1px solid #cccccc;
-	border-radius: 6px;
-    box-sizing: border-box;
+	border-radius: 6px; /* Rounded Corner */
+    box-sizing: border-box; /* Different stlye than that of default */
 	display: block;
+	margin: 10px 0;
+	padding: 10px; /* Inner padding within user typing area */
 }
 
 input[type=text], input[type=email] {
-	width: 90%;
 	margin: 0 auto;
+	width: 90%;
 }
 
 textarea {
-	resize: none;
-	width: 90%;
 	margin: 0 auto;
+	resize: none; /* Don't allow user to change size of text area */
+	width: 90%;
 }
 
 input[type=submit], input[type=reset] {
-	width: 30%;
 	margin: 10px;
+	width: 30%;
+}
+
+.page_banner {
+	display: block;
+	margin: 0 auto;
+	max-width: 90%;
 }
 
 .button {
