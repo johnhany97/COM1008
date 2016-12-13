@@ -1,18 +1,8 @@
 /* This file has been created and written by John Ayad */
 
 /*
- * General Tags
+ * Fonts 
  */
-
-/* @font-face kit by Fonts2u (http://www.fonts2u.com) */
-@font-face {
-	font-family:"NCAA Purdue Boilermakers";
-	src: url("../fonts/NCAA Purdue Boilermakers.otf") format("truetype");
-	font-weight:normal;
-	font-style:normal;
-}
-
-
 @font-face {
 	font-family:"Fitzgerald Black";
 	src: url("../fonts/fitzblack.ttf") format("truetype");
@@ -27,97 +17,100 @@
 	font-style:normal;
 }
 
+/*
+ * General Tags
+ */
 html, body {
     height: 100%;
 }
 
 body {
-    background-color: rgb(254, 251, 218);
+    background-color: rgb(254, 251, 218); /* Background colour in main content */
 	font-family: "Fitzgerald", serif;
-	min-width: 360px;
+	min-width: 360px; /* Stop scaling to less than 360px wide */
 }
 
 main {
+	margin: 0 auto; /* Center align */
+	max-width: 1000px; /* Stop increasing in size after 1000px */
     min-height: 80%;
-	width: 80%;
-	max-width: 1000px;
-	margin: 0 auto;
+    overflow: auto; /* If content overflows, a scroll-bar should be added to see the rest of the content */
     position: relative;
-    overflow: auto;
+	width: 80%; /* Only fill up 80% of the window */
 }
 
 h1 {
-	font-size: 1.9em;
+	font-size: 1.9em; /* Default font size for Heading1 */
 }
 
 p, main article p {
-    font-size: 1.5em;
+    font-size: 1.5em; /* Default font size for Paragraph */
 }
 
 /*
  * Header
  */
 header {
+	background-color: rgb(0, 28, 107); /* Background color of Header Logo */
+	margin: 0 auto; /* Center align */
 	padding: 50px 2%;
-	margin: 0 auto;
-	background-color: rgb(0, 28, 107);
 }
 
 #logo_header {
 	display: block;
-	margin: 0 auto;
-	max-width: 100%;
+	margin: 0 auto; /* Center align */
+	max-width: 100%; /* Stop increasing in size when reaches the origin width of image */
 }
 
 /*
  * Navigation
  */
 nav {
-	background-color: rgb(234,0,130);
-	text-align: center;
+	background-color: rgb(234,0,130); /* Background color of navigation bar */
 	margin-bottom: 10px;
+	text-align: center; /* Center align text in navigation */
 }
 
 nav ul {
-	list-style: none;
-	padding: 0;
+	list-style: none; /* Remove the bullets */
 	margin: 0;
+	padding: 0;
 }
 
 nav li {
-	font-size: 1.5em;
-	padding: 0;
-	margin: 0;
 	display: inline;
 	font-family: "Fitzgerald Black";
+	font-size: 1.5em;
+	margin: 0;
+	padding: 0;
 }
 
 nav li a, .menu_button {
 	color: white;
-	transition: all 0.3s ease;
+	display: block; /* Fill up the parent */
 	padding: 2.5%;
-	display: block;
+	transition: all 0.3s ease; /* Smoothly transform the navigation item to new colours */
 }
 
 nav a:link {
-	text-decoration: none;
-	color: white;
+	color: white; /* Maintain the colour even though it's a link */
+	text-decoration: none; /* Remove the underline */
 }
 
 nav a:visited {
-	color: white;
+	color: white; /* Ignore the fact it's been visited as a link before */
 }
 
 nav a:hover {
-	color: black;
-	background-color: yellow;
+	background-color: yellow; /* Background colour */
+	color: black; /* Font Colour */
 }
 
-.menu_items {
+.menu_items { /* Class being used to hide the menu items by default */
 	display: none;
 }
  
-.expand {
+.expand { /* Class being used to show the menu items when button is clicked */
 	display: block !important; 
 }
 
@@ -126,96 +119,98 @@ nav a:hover {
  */
 /* Styles for contact form */
 form table {
-	margin: 0 auto;
+	margin: 0 auto; /* Center align */
 }
 
 .button {
-    border-radius: 10%;
-    border: 0;
-    color: white;
-    background-color: rgb(234,0,130);
+    background-color: rgb(234,0,130); /* Background Colour for the button */
+    border: 0; /* Remove default border */
+    border-radius: 10%; /* rounded corners */
+    color: white; /* Text colour to white */
     padding: 2%;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease; /* Smooth transition */
 }
 
 .button:hover {
-    color: black;
-    background-color: yellow;
+    background-color: yellow; /* Background colour */
+    color: black; /* Font Colour */
 }
 
-.centered {
+.centered { /* Class used to center align text content */
 	text-align: center;
 }
 
 /* Style for play button on home page */
 .play_button {
-    border-radius: 50%;
-    border: 30px solid rgb(0, 28, 107);
-    width: 200px;
-    height: 200px;
     background-color: rgb(234,0,130);
-    font-size: 2.4em;
-    line-height: 200px;
-    margin: 0 auto;
+    border: 30px solid rgb(0, 28, 107);
+    border-radius: 50%; /* Perfect Circle */
+    font-size: 2.4em; /* Font Size */
+    height: 200px; /* Perfect circle */
+    line-height: 200px; /* Vertical align the text */
+    margin: 0 auto; /* Center align */
+    width: 200px; /* Perfect circle */
 }
 
 .play_button a {
     display: block;
-    border-radius: 50%;
-    width: 200px;
-    height: 200px;
+    border-radius: 50%; /* Perfect circle */
+    width: 200px; /* Perfect circle */
+    height: 200px; /* Perfect circle */
     text-align: center;
-    text-decoration: none;
-    transition: all 0.3s ease;
+    text-decoration: none; /* Remove underline */
+    transition: all 0.3s ease; /* Smooth Transition */
 }
 
-.play_button a #child {
+.play_button a #child { /* Deals with the text inside the button */
     padding: 10% 0;
     color: white;
 }
 
 .play_button a:visited {
+	/* Ignore that it's been visited before */
 	color: white;
 }
 
 .play_button a:hover {
-    color: black;
-	background-color: yellow;
+	background-color: yellow; /* Background colour */
+    color: black; /* Text colour */
 }
 
 /* Style for each page title */
 .page_title {
-	text-align: center;
+	text-align: center; /* Center aligned */
 	font-size: 40px;
 }
 
 /* Styles for an article */
 main article {
 	margin: 20px 0;
-	border-top: 1px solid rgb(0,0,0);
+	border-top: 1px solid rgb(0,0,0); /* Line seperator between each and every news article */
 }
 
-main article h1 {
+main article h1 { /* News title */
 	font-size: 1.7em;
 	color: rgb(0, 28, 107);
 }
 
-main article h3 {
+main article h3 { /* News Author and Date of article */
     font-size: 1.3em;
     color: black;
 }
 
-main article img {
+main article img { /* News Banner */
 	display: block;
-	margin: 0 auto;
+	margin: 0 auto; /* Center align */
 	max-width: 70%;
 }
 
-.red {
+.red { /* Class to turn text colour into red */
     color: red;
 }
 
-#sliding_puzzle {
+/* Styles for puzzle */
+#sliding_puzzle { /* Center align the puzzle */
 	display: block;
 	margin: 0 auto;
 }
@@ -223,57 +218,57 @@ main article img {
 /* Styles for Features on home page */
 .feature_set {
     width: 80%;
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Feature after feature in one column */
+    margin: 0 auto; /* Center align */
 }
 
 .feature {
-    width: 70%;
-    margin: 10px auto;
-	text-align: center;
+    width: 70%; /* Fill 70% of parent element */
+    margin: 10px auto; /* Center align with spacing above and below */
+	text-align: center; /* Center align text */
     font-size: 1.5em;
 }
 
 .feature_img {
-    border-radius: 5%;
+    border-radius: 5%; /* rounded corners */
     padding: 10px;
     max-width: 80%;
     background-color: rgb(0, 28, 107);
     display: inline-block;
-	transition: all 0.3s ease;
+	transition: all 0.3s ease; /* Smooth transition */
 }
 
-.main_image {
+.main_image { /* Style to edit SVG */
     fill: white;
 }
 
 .feature_img:hover {
-    background-color: rgb(234,0,130);
-    transform: scale(1.1);
+    background-color: rgb(234,0,130); /* Change background-color */
+    transform: scale(1.1); /* Zoom in */
 }
 
 
 /* Styles for Founders & Recommendations */
 .full_list {
     width: 80%;
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
+    display: flex; /* Use Flex box */
+    flex-direction: column; /* List elements in one column */
+    margin: 0 auto; /* Center align */
 }
 
 .list_item {
-    width: 100%;
+    width: 100%; /* Fill 100% of parent element */
 }
 
 .list_item img {
     max-width: 100%;
-    transition: all 0.3s ease;
-    border-radius: 5px;
+    transition: all 0.3s ease; /* Smooth transition */
+    border-radius: 5px; /* Rounded corners */
 }
 
 .list_item img:hover {
-    transform: scale(1.05);
+    transform: scale(1.1); /* Zoom in */
 }
 
 /*
@@ -281,13 +276,12 @@ main article img {
  *
  */
 footer {
-    position: relative;
-	clear: both;
+    position: relative; /* Used to maintain the footer at the bottom of the page */
+	clear: both; /* To avoid any clashes with previous elements */
 	font-family: "Times New Roman", serif;
     font-size: 10px;
-    color: white;
 	padding: 3px 0;
-    height: 70px;   /* Height of the footer */
+    height: 70px;  /* Height of the footer | Used to maintain footer at the bottom of the page */
     width: 100%;
     background-color: rgb(0, 28, 107);
 }
@@ -297,7 +291,8 @@ footer p a:visited {
     color: white;
 }
 
-footer p {
+footer p, footer a {
     text-align: right;
     margin-right: 20px;
+	color: white;
 }

@@ -1,33 +1,11 @@
 /* This file has been created and written by John Ayad */
-
-/*
- * General Tags
- */
-
-
-
-/*
- * Header
- */
-
-
-
-/*
- * Navigation
- */
-
 /*
  * Main Content
  */
 .feature_set {
-    flex-direction: row;
+    flex-direction: row; /* Show each feature of the list in its own column */
 }
 
 .feature {
     margin: 10px 10px;
 }
-
-/*
- * Footer
- *
- */

@@ -1,0 +1,46 @@
+/* This file has been created and written by John Ayad */
+
+/*
+ * Navigation
+ */
+/* Turn navigation from toggle system to a fully visible horizontal bar */
+nav {
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block; /* horizontal */
+    margin: 0;
+}
+
+nav ul li a {
+    padding: 17px 8px;
+}
+
+.menu_items {
+	display: block; /* show all individual elements by default */
+}
+
+#menu_button {
+    display: none; /* hide button */
+}
+
+/*
+ * Main Content
+ */
+form input[type="text"], form input[type="email"] {
+    width: 600px; /* Width for the contact-us form elements */
+}
+
+textarea {
+    width: 600px; /* Width for the contact-us form elements */
+}
+
+.full_list {
+    flex-direction: row; /* Show each element of list in it's own column */
+}
+
+.list_item {
+    width: 40%;
+    margin: 0 20px;
+}
