@@ -254,25 +254,25 @@ main article img {
 }
 
 
-/* Styles for Founders */
-.founders {
+/* Styles for Founders & Recommendations */
+.full_list {
     width: 80%;
     display: flex;
     flex-direction: column;
     margin: 0 auto;
 }
 
-.founder {
+.list_item {
     width: 100%;
 }
 
-.founder img {
+.list_item img {
     max-width: 100%;
     transition: all 0.3s ease;
     border-radius: 5px;
 }
 
-.founder img:hover {
+.list_item img:hover {
     transform: scale(1.05);
 }
 

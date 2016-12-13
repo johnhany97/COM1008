@@ -47,11 +47,11 @@ textarea {
     width: 600px;
 }
 
-.founders {
+.full_list {
     flex-direction: row;
 }
 
-.founder {
+.list_item {
     width: 40%;
     margin: 0 20px;
 }
