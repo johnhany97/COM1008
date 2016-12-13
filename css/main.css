@@ -5,7 +5,8 @@
  */
 @font-face {
 	font-family:"Fitzgerald Black";
-	src: url("../fonts/fitzblack.ttf") format("truetype");
+	src: url("../fonts/fitzblack.ttf") format("truetype"),
+		url("../fonts/fitzgerald-webfont.eot?#iefix") format("embedded-opentype");
 	font-weight:normal;
 	font-style:normal;
 }
@@ -180,21 +181,22 @@ input[type=submit], input[type=reset] {
     line-height: 200px; /* Vertical align the text */
     margin: 0 auto; /* Center align */
     width: 200px; /* Perfect circle */
+	
 }
 
 .play_button a {
-    display: block;
     border-radius: 50%; /* Perfect circle */
-    width: 200px; /* Perfect circle */
+    color: white;
+    display: block;
     height: 200px; /* Perfect circle */
     text-align: center;
     text-decoration: none; /* Remove underline */
     transition: all 0.3s ease; /* Smooth Transition */
+    width: 200px; /* Perfect circle */
 }
 
 .play_button a #child { /* Deals with the text inside the button */
     padding: 10% 0;
-    color: white;
 }
 
 .play_button a:visited {
