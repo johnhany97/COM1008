@@ -1,3 +1,14 @@
+/*
+ * Function to return which grid cell is the mouse currently in
+ *
+ * Paramters:
+ * 		x => Mouse X Position
+ *      y => Mouse Y Position
+ *
+ * Returns:
+ *      Object containing i and j representing index of cell in a 2d array
+ *
+ */
 function whichGridCell(x, y) {
     if (x < 0) x = 0;
     if (y < 0) y = 0;
@@ -9,11 +20,24 @@ function whichGridCell(x, y) {
     // x, y on screen is j,i in grid
     return {j: gx, i: gy};
 }
-
+/*
+ * Function to clear the canvas
+ *
+ */
 function clearCanvas() {
     context.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
 }
 
+/*
+ * Function to return the mouse co-ordinates
+ *
+ * Paramters:
+ * 		e => Event details on click
+ *
+ * Returns:
+ *      Object containing x and y representing co ordinates of mouse click
+ *
+ */
 function getMouseXY(e) {
     var boundingRect = canvas.getBoundingClientRect();
     var offsetX = boundingRect.left;
@@ -28,6 +52,10 @@ function getMouseXY(e) {
     return {x: mx, y: my}; // return as an object
 }
 
+/*
+ * Function to display a splash screen
+ *
+ */
 function splashScreen() {
     // Background colour
     context.fillStyle = "rgb(17, 128, 221)";
@@ -44,6 +72,10 @@ function splashScreen() {
     context.fillText("Click to continue", CANVAS_HEIGHT / 2, (CANVAS_HEIGHT / 2) + (CANVAS_HEIGHT / 4));
 }
 
+/*
+ * Function to initialize game variables
+ *
+ */
 function initializeGame() {
     canvas.removeEventListener("click", initializeGame);
     //Clear
@@ -73,53 +105,95 @@ function initializeGame() {
     gamePlay(board);
 }
 
+/*
+ * Function to play the actual game
+ *
+ * Paramters:
+ * 		board => 2D array of objects relating to current shuffling of board
+ *
+ */
 function gamePlay(board) {
     //Wait until user clicks as long as we didn't win
     if (checkWon(board)) game_won = true;
-    if (game_won) winCelebration();
+    if (game_won) alert("You won!");
     else {
         canvas.addEventListener("click", function(evt) {
-            console.log("Cool");
             if (!clickReset(evt))
                 slideCell(evt, board);
             else {
                 evt.stopImmediatePropagation();
                 initializeGame();
             }
-        });
+        }, false);
     }
 }
 
+/*
+ * Function to confirm whether a click was on the reset button or not
+ *
+ * Paramters:
+ * 		evt => Event details on click
+ *
+ * Returns:
+ *      boolean representing whether or not click was inside the button
+ *
+ */
 function clickReset(evt){
+	// Get Mouse Position
     mousePos = getMouseXY(evt);
+	// Button X co-ordinates
     buttonXStart = CELL_WIDTH*3 + CELL_WIDTH/3;
     buttonXEnd = CELL_WIDTH*3 + CELL_WIDTH/3 + CELL_WIDTH + CELL_WIDTH/3;
+	// Button Y Co-ordinates
     buttonYStart = CELL_HEIGHT*4 + CELL_HEIGHT/8;
     buttonYEnd = CELL_HEIGHT*4 + CELL_HEIGHT/8 + CELL_HEIGHT - CELL_HEIGHT/4;
+	// Compare
     if (mousePos.x >= buttonXStart && mousePos.x <= buttonXEnd && mousePos.y >= buttonYStart && mousePos.y <= buttonYEnd)
         return true;
     else return false;
 }
 
+/*
+ * Function to return a fresh board
+ *
+ * Returns:
+ *      2D array of objects
+ *
+ */
 function getBoard() {
     var board = new Array(GAME_CELLS);
     for (var i = 0; i < GAME_CELLS; i++) {
         board[i] = new Array(GAME_CELLS);
         for (var j = 0; j < GAME_CELLS; j++){
             board[i][j] = new Object();
+			//Represent row
             board[i][j].i = i;
+			//Represent col
             board[i][j].j = j;
+			//Whether or not it's the empty cell (initialize all to false)
             board[i][j].emptyLoc = false;
         }
     }
     return board;
 }
 
+/*
+ * Function to shuffle a 2D array
+ *
+ * Paramters:
+ * 		arr => 2D array
+ *
+ * Returns:
+ *      Shuffled array
+ *
+ */
 function shuffleBoard(arr) {
     for (var i = 0; i < GAME_CELLS; i++){
         for (var j = 0; j < GAME_CELLS; j++){
+			//Random cell
             var x = Math.floor(Math.random() * GAME_CELLS);
             var y = Math.floor(Math.random() * GAME_CELLS);
+			//Swap current with the random cell
             var t = arr[i][j];
             arr[i][j] = arr[y][x];
             arr[y][x] = t;
@@ -127,16 +201,37 @@ function shuffleBoard(arr) {
     }
 }
 
+/*
+ * Function to initialize one cell to become an empty cell
+ *
+ * Paramters:
+ * 		arr => 2D board array of objects
+ *
+ */
 function emptyTileInitialize(arr) {
     var x = Math.floor(Math.random() * GAME_CELLS);
     var y = Math.floor(Math.random() * GAME_CELLS);
     arr[y][x].emptyLoc = true;
 }
 
+/*
+ * Function to return the random image number to 
+ *
+ * Returns:
+ *      Random number between and including 0 and 4
+ *
+ */
 function getImage() {
     return Math.floor(Math.random() * 5);
 }
 
+/*
+ * Function to draw cells on the canvas
+ *
+ * Paramters:
+ * 		board => 2D array
+ *
+ */
 function drawCells(board) {
     var img_cell_width = img.width / GAME_CELLS;
     var img_cell_height = img.height / GAME_CELLS;
@@ -156,6 +251,14 @@ function drawCells(board) {
     }
 }
 
+/*
+ * Function to slide a cell
+ *
+ * Paramters:
+ * 		e => Event details on click
+ *      arr => 2D Board array of objects
+ *
+ */
 function slideCell(e, arr) {
     if (!game_won) {
         //User didn't win yet
@@ -187,26 +290,34 @@ function slideCell(e, arr) {
                 if (arr[gridPos.i][gridPos.j - 1].emptyLoc)
                     swapCells(arr, gridPos.i, gridPos.j, "left");
             }
-        } else console.log("Garbage click at : " + gridPos.i.toString() + gridPos.j.toString());
+        }
         game_won = checkWon(arr);
         drawCells(arr);
     } else {
         //User won
         //stop listeneing to user clicks in grid
         canvas.removeEventListener("click", function(evt) {
-            console.log("Cool");
             if (!clickReset(evt))
                 slideCell(evt, board);
             else {
-                evt.stopImmediatePropagation()
                 initializeGame();
             }
-        });
+        }, false);
         winCelebration();
     }
     
 }
 
+/*
+ * Function to actually swap the cells in the wanted direction
+ *
+ * Paramters:
+ * 		arr => 2D board array
+ *      i => Cell Pressed row
+ *      j => Cell pressed col
+ *      posTo => Location to swap with
+ *
+ */
 function swapCells(arr, i, j, posTo){
     if (posTo == "top") {
         var t = arr[i][j];
@@ -230,6 +341,16 @@ function swapCells(arr, i, j, posTo){
     }
 }
 
+/*
+ * Function to check wether the user has won or not
+ *
+ * Paramters:
+ * 		arr => 2D board array
+ *
+ * Returns:
+ *      boolean representing whether the user won or not
+ *
+ */
 function checkWon(arr){
     var flag = true;
     for (var i = 0; i < GAME_CELLS; i++){
@@ -253,8 +374,6 @@ const CELL_WIDTH = CANVAS_WIDTH / NUM_CELLS;
 const CELL_HEIGHT = CANVAS_HEIGHT / NUM_CELLS;
 var game_won = false;
 var img;
-var celebImg;
-var celebrationImg = "../images/game_win_1.png";
 //Start the magic show
-splashScreen()
-canvas.addEventListener("click", initializeGame);
+splashScreen();
+canvas.addEventListener("click", initializeGame, false);
