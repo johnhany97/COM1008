@@ -53,39 +53,22 @@
             <h2>Form:</h2>
 			<!-- Contact us form -->
             <form name="myform" action="http://www.dcs.shef.ac.uk/cgi-intranet/public/FormMail.pl" method="get">
+				<!-- Recipient of email -->
                 <input type="hidden" name="recipient" value="jayad1@sheffield.ac.uk">
-                <table>
-                    <tr>
-                        <td>
-                            <label for="from">Name</label>
-                        </td>
-                        <td>
-                            <input type="text" name="from" id="from" placeholder="Type your name..." maxlength="40" size="20">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label for="email">Email address</label>
-                        </td>
-                        <td>
-                            <input type="email" name="email" id="email" placeholder="Type your email..." maxlength="40" size="20">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label for="email">Comments</label>
-                        </td>
-                        <td>
-                            <textarea name="comments" id="comments" rows="5" placeholder="Type your comments..."></textarea>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2" align="right">
-                            <input type="submit" name="submit" id="submit" value="SUBMIT" class="button">
-                            <input type="reset" value="RESET" class="button">
-                        </td>
-                    </tr>
-                </table>
+				<!-- Name -->
+				<label for="from"><p>Name</p></label>
+				<input type="text" name="from" id="from" placeholder="Type your name..." maxlength="40">
+				<!-- Email Address -->
+				<label for="email"><p>Email address</p></label>
+				<input type="email" name="email" id="email" placeholder="Type your email..." maxlength="40">
+				<!-- User comments -->
+				<label for="email"><p>Comments</p></label>
+				<textarea name="comments" id="comments" rows="5" placeholder="Type your comments..."></textarea>
+				<!-- Submit and Reset Button center aligned -->
+				<div class="centered">
+					<input type="submit" name="submit" id="submit" value="SUBMIT" class="button">
+					<input type="reset" value="RESET" class="button">
+				</div>
             </form>
         </main>
 		<!-- Footer -->

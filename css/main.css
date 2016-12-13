@@ -122,10 +122,34 @@ table {
 	margin: 0 auto; /* Center align */
 }
 
+input[type=text], input[type=email], textarea {
+	padding: 10px;
+	margin: 10px 0;
+	border: 1px solid #cccccc;
+	border-radius: 6px;
+    box-sizing: border-box;
+	display: block;
+}
+
+input[type=text], input[type=email] {
+	width: 90%;
+	margin: 0 auto;
+}
+
+textarea {
+	resize: none;
+	width: 90%;
+	margin: 0 auto;
+}
+
+input[type=submit], input[type=reset] {
+	width: 30%;
+	margin: 10px;
+}
+
 .button {
     background-color: rgb(234,0,130); /* Background Colour for the button */
-    border: 0; /* Remove default border */
-    border-radius: 10%; /* rounded corners */
+    border: none; /* Remove default border */
     color: white; /* Text colour to white */
     padding: 2%;
     transition: all 0.3s ease; /* Smooth transition */
@@ -272,7 +296,7 @@ main article img { /* News Banner */
 }
 
 /* Styles for Accessibility table */
-#accessibility th, td {
+#accessibility th, #accessibility td {
     padding: 15px;
     text-align: left;
 	border: 1px solid black;

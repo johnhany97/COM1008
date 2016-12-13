@@ -28,13 +28,6 @@ nav ul li a {
 /*
  * Main Content
  */
-form input[type="text"], form input[type="email"] {
-    width: 600px; /* Width for the contact-us form elements */
-}
-
-textarea {
-    width: 600px; /* Width for the contact-us form elements */
-}
 
 .full_list {
     flex-direction: row; /* Show each element of list in it's own column */
