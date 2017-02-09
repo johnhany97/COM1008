@@ -1,3 +1,9 @@
+/**
+ * Sliding Puzzle Game
+ *
+ * Copyright (C) 2017  John H. Ayad
+ */
+
 //Where all the magic takes place
 var canvas = document.getElementById("sliding_puzzle");
 var context = canvas.getContext("2d");
