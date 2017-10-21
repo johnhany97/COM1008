@@ -9,5 +9,5 @@ Grade: 76/80
 Demo
 ---------------
 You can see a live demo of this website at the following link:
-  www.puzzleshow.esy.es
+  https://puzzle.johnayad.com
 
